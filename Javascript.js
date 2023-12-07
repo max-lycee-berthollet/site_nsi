@@ -8,5 +8,5 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // Lancer l'animation après un délai de 1 seconde
-  setTimeout(animerTexte, 1000);
+  setTimeout(animerTexte, 100);
 });
