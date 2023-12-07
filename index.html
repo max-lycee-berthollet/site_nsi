@@ -4,13 +4,20 @@
   <title>SocialNexa</title>
   <meta charset="utf-8">
   <link rel="stylesheet" href="style.css">
-  <script src="Javascript.js"></script>
+  <style>
+    #texteAccueil {
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+  </style>
 </head>
 <body>
 	<main id='tete'><section><img id='logo' src='image.png'></section><section><a href='index.html'>Accueil</a></section><section><a href='postes.php'>Postes</a></section><section><a href='publier_page.php'>Publier</a></section><section><a href='compte.php'>Compte</a></section></main>
 	<hr>
-	<h1>...En travaux...</h1>
-	
-  
+	<div id="conteneur">
+          <h1 id="texteAccueil">Bienvenue sur notre site !</h1>
+        </div>
+
+	<script src="Javascript.js"></script>
 </body>
 </html>
