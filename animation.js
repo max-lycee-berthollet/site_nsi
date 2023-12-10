@@ -1,4 +1,4 @@
-window.onload = function() {
+mowindow.onload = function() {
   const title = document.querySelector('h1');
   const text = document.querySelector('p');
   const button = document.getElementById('btn');
@@ -28,7 +28,7 @@ window.onload = function() {
   button.style.transform = 'translateY(-100vh)';
 
   setTimeout(() => {
-    // Changer l'URL pour rediriger vers le site donné (met le lien vers notre site)
+    // Changer l'URL pour rediriger vers le site donné (met le lien vers notre site en mode des que tu epplique ce programme et que tu clique sur le bouton en bas il t'envoie vers le lien que tu donnes)
     window.location.href = 'https://www.google.com/';
   }, 1000); // Délai pour l'animation avant la redirection, ici 1000ms (1 seconde)
 });;
