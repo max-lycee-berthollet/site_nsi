@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Animation de Page d'Accueil</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+      overflow: hidden;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+      color: #333;
+      opacity: 0;
+      transform: translateY(-50px);
+      transition: opacity 1s, transform 1s;
+    }
+
+    p {
+      font-size: 1.2em;
+      color: #555;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 1s, transform 1s;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 1em;
+      background-color: #4285f4;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 1s, transform 1s;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to My Site</h1>
+    <p>Discover amazing things here!</p>
+    <button id="btn">Get Started</button>
+  </div>
+
+  <script src="animation.js"></script>
+</body>
+</html>
