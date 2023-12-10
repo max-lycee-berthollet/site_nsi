@@ -28,7 +28,7 @@ window.onload = function() {
   button.style.transform = 'translateY(-100vh)';
 
   setTimeout(() => {
-    // Changer l'URL pour rediriger vers le site donné (par exemple, https://www.example.com)
+    // Changer l'URL pour rediriger vers le site donné (met le lien vers notre site)
     window.location.href = 'https://www.google.com/';
   }, 1000); // Délai pour l'animation avant la redirection, ici 1000ms (1 seconde)
 });;
