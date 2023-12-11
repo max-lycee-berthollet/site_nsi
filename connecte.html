@@ -5,13 +5,62 @@
   <meta charset="utf-8">
   <link rel="stylesheet" href="style.css">
   <script src="script.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    .message {
+      margin-bottom: 10px;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+  </style>
 </head>
 <body>
-	<main id='tete'><section><img id='logo' src='image.png'></section><section><a href='index.html'>Accueil</a></section><section><a href='postes.php'>Postes</a></section><section><a href='publier_page.php'>Publier</a></section><section><a href='compte.php'>Compte</a></section></main>
-	<hr>
-  <h1>Vous etes connecte, bonne continuation, la bise ! </h1>
+  <main id='tete'>
+    <section><img id='logo' src='image.png'></section>
+    <section><a href='index.html'>Accueil</a></section>
+    <section><a href='postes.php'>Postes</a></section>
+    <section><a href='publier_page.php'>Publier</a></section>
+    <section><a href='compte.php'>Compte</a></section>
+  </main>
+  <hr>
+  <h1>Vous êtes connecté, bonne continuation ! </h1>
+  <p>Voici toutes vos publications :</p>
+  
+  <div id="messages"></div>
+  
   <form action="deconnexion.php" method="post">
-      <input type="submit" value="Déconnexion">
+      <input id='monBouton' type="submit" value="Déconnexion">
   </form>
+
+  <script>
+    $(document).ready(function() {
+      function fetchData() {
+        $.ajax({
+          url: 'recuperer_messages_perso.php',
+          type: 'GET',
+          dataType: 'json',
+          success: function(data) {
+            $('#messages').empty(); // Vide la div #messages
+            $.each(data, function(index, message) {
+              var messageDiv = $('<div class="message"></div>');
+              messageDiv.append('<div><b>' + message.nom_utilisateur + '</b> ' + message.heure + '</div>');
+              messageDiv.append('<div>' + message.poste + '</div>');
+              $('#messages').append(messageDiv);
+            });
+          },
+          error: function(xhr, status, error) {
+            console.error(status + ": " + error);
+          }
+        });
+      }
+
+      // Appel initial
+      fetchData();
+
+      // Rafraîchissement toutes les 5 secondes (5000 millisecondes)
+      setInterval(fetchData, 5000);
+    });
+  </script>
 </body>
 </html>
